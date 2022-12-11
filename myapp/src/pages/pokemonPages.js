@@ -1,6 +1,6 @@
 import Menu from "../components/menu";
 import React,{useEffect,useState} from "react";
-import { getAll } from "../pokemon";
+import { getAll,addToPokedex } from "../pokemon";
 function Pokemon(props){
     const [ pokemons, setPokemon ] = useState([]);
 
@@ -22,6 +22,7 @@ function Pokemon(props){
           return <div key={key}>
             <img className="avatar" src={pokemons.img} alt="test" width="100px" />
             <h2>{pokemons.name}</h2>
+            <button onClick={()=>addToPokedex(pokemons._id)}>Capturer !</button>
           </div>
         })
       }
