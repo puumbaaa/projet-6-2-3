@@ -11,7 +11,7 @@ import Pokedex from "./pages/pokedex";
 function App(props){
   return <Router>
       <Switch>
-        <Route exact path="/index"> 
+        <Route exact path="/"> 
           <Index /> 
         </Route>
         <Route exact path="/pokemon"> 
