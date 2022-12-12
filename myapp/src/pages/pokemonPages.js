@@ -20,20 +20,20 @@ function Pokemon(props){
         .catch(error=>console.error("Erreur avec notre API :",error.message));
     },[]);
     console.log(pokemons)
-    return <div>
+    return <div className="back">
     <Menu/>
-    <h1 className="text-center">Pokemon</h1>
+    <h1 className="text-center">Liste de Pokemons</h1>
     <Container>
       <Row>
       {
         pokemons.map((pokemons,key) =>{
           return <Col md={4}>
             <div key={key}>
-            <Card style={{ width: '18rem' }} className="text-center">
+            <Card style={{ width: '18rem' }} className="text-center card">
             <Card.Img className="pokSize" variant="top" src={pokemons.img} alt="test" />
             <Card.Body>
               <Card.Title>{pokemons.name}</Card.Title>
-              <Button variant="primary" onClick={()=>addToPokedex(pokemons)}>Capturer !</Button>
+              <Button variant="danger" onClick={()=>addToPokedex(pokemons)}>Capturer !</Button>
             </Card.Body>
           </Card></div>
         </Col>

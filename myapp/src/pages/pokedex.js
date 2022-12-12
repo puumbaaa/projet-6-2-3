@@ -18,7 +18,7 @@ function Pokedex(props){
         .catch(error=>console.error("Erreur avec notre API :",error.message));
     },[]);
     console.log(pokedex)
-    return <div>
+    return <div className="back">
     <Menu/>
     <h1 className="text-center">Pokedex</h1>
     <Container>

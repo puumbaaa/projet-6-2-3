@@ -5,7 +5,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import '../App.css'
 function Menu(){
   return<>
-  <Navbar bg="dark" variant="dark">
+  <Navbar bg="danger" variant="dark">
     <Container>
       <Navbar.Brand to="/"><img className="logo-menu" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/1200px-International_Pok%C3%A9mon_logo.svg.png" alt="logo pokemon"></img></Navbar.Brand>
       <Nav className="me-auto">

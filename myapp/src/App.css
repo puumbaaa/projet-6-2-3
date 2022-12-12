@@ -36,6 +36,11 @@
     transform: rotate(360deg);
   }
 }
+.back{
+  background-image: url("../img/background.jpg");
+  background-repeat:no-repeat;
+  background-position:center center;
+}
 .pokSize{
   width: 200px;
   height: 200px;
@@ -43,3 +48,4 @@
 .logo-menu{
   width: 20%
 }
+
