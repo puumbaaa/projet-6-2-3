@@ -1,6 +1,13 @@
 import Menu from "../components/menu";
 import React,{useEffect,useState} from "react";
 import { getAll,addToPokedex } from "../pokemon";
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import '../App.css'
+
 function Pokemon(props){
     const [ pokemons, setPokemon ] = useState([]);
 
@@ -15,18 +22,27 @@ function Pokemon(props){
     console.log(pokemons)
     return <div>
     <Menu/>
-    <h1>Pokemon</h1>
-    <div>
+    <h1 className="text-center">Pokemon</h1>
+    <Container>
+      <Row>
       {
         pokemons.map((pokemons,key) =>{
-          return <div key={key}>
-            <img className="avatar" src={pokemons.img} alt="test" width="100px" />
-            <h2>{pokemons.name}</h2>
-            <button onClick={()=>addToPokedex(pokemons._id)}>Capturer !</button>
-          </div>
+          return <Col md={4}>
+            <div key={key}>
+            <Card style={{ width: '18rem' }} className="text-center">
+            <Card.Img className="pokSize" variant="top" src={pokemons.img} alt="test" />
+            <Card.Body>
+              <Card.Title>{pokemons.name}</Card.Title>
+              <Button variant="primary" onClick={()=>addToPokedex(pokemons)}>Capturer !</Button>
+            </Card.Body>
+          </Card></div>
+        </Col>
         })
+        
       }
-     </div>
+      </Row>
+    </Container>
+    
 </div>;
 }
 

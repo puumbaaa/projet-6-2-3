@@ -36,3 +36,10 @@
     transform: rotate(360deg);
   }
 }
+.pokSize{
+  width: 200px;
+  height: 200px;
+}
+.logo-menu{
+  width: 20%
+}

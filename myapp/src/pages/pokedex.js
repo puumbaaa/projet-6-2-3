@@ -1,6 +1,11 @@
 import Menu from "../components/menu";
 import React,{useEffect,useState} from "react";
-import { getAllp,addToPokedex } from "../pokemon";
+import { getAllp } from "../pokemon";
+import Card from 'react-bootstrap/Card';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import '../App.css'
 function Pokedex(props){
     const [ pokedex, setPokedex ] = useState([]);
 
@@ -15,17 +20,25 @@ function Pokedex(props){
     console.log(pokedex)
     return <div>
     <Menu/>
-    <h1>Pokedex</h1>
-    <div>
+    <h1 className="text-center">Pokedex</h1>
+    <Container>
+      <Row>
       {
         pokedex.map((pokedex,key) =>{
-          return <div key={key}>
-            <img className="avatar" src={pokedex.img} alt="test" width="100px" />
-            <h2>{pokedex.name}</h2>
-          </div>
+          return <Col md={4}>
+            <div key={key}>
+            <Card style={{ width: '18rem' }} className="text-center">
+            <Card.Img className="pokSize" variant="top" src={pokedex.img} alt="test" />
+            <Card.Body>
+              <Card.Title>{pokedex.name}</Card.Title>
+            </Card.Body>
+          </Card></div>
+        </Col>
         })
+        
       }
-     </div>
+      </Row>
+    </Container>
 </div>;
 }
 
