@@ -46,8 +46,6 @@ app.get("/Pokemon/list", function (req, res) {
         .collection("Pokemon")
         .insertOne({...body})
     res.json(body);
-    dbConnect
-        .updateOne({id:"004"},{$set:{name:"Mewtwo"}});
     
   });
   app.post('/Pokemon/update',jsonParser, (req, res) => {
@@ -61,7 +59,7 @@ app.get("/Pokemon/list", function (req, res) {
         .updateOne({id:body.id},{$set:{...body}});
     
   });
-  app.delete('/Pokemon/insert',jsonParser,(req,res)=>{
+  app.delete('/Pokemon/delete',jsonParser,(req,res)=>{
     const body= req.body;
     const dbConnect = dbo.getDb();
     dbConnect 

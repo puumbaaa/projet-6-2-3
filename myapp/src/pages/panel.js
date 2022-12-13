@@ -1,7 +1,8 @@
 import Menu from "../components/menu";
 import Modalupdate from "../components/modal";
+import ModalAdd from "../components/modalAdd";
 import React,{useEffect,useState} from "react";
-import { getAll,deletePokemon,updatePokemon } from "../pokemon";
+import { getAll,deletePokemon} from "../pokemon";
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
@@ -11,7 +12,7 @@ import Col from 'react-bootstrap/Col';
 import '../App.css'
 function Panel(props){
     const [ pokemons, setPokemon ] = useState([]);
-    const [show, setShow] = useState(false);
+    
 
     //va s'executer seulement au lancement du composant (dep: [])
     useEffect(() => {
@@ -24,7 +25,9 @@ function Panel(props){
     return <div className="back">
         <Menu/>
         <h1 className="text-center">Panel de gestion</h1>
+        
         <Container>
+          <Row><Col md={4}><ModalAdd/></Col></Row>
       <Row>
       {
         pokemons.map((pokemon,key) =>{

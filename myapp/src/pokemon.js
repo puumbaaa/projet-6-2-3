@@ -40,7 +40,7 @@ export const addToPokedex = async (pokemon) => {
 }
 export const deletePokemon = async (pokemon) => {
     const response = await fetch(
-        'http://localhost:4444/pokemon/insert', {
+        'http://localhost:4444/Pokemon/delete', {
             method: 'DELETE', 
             headers: {
                 'Accept': 'application/json',
@@ -64,4 +64,18 @@ export const updatePokemon = async (pokemon) => {
         }
     )
     .then (response => response.json())
+}
+export const addPokemon = async (pokemon) => {
+    const response = await fetch(
+        'http://localhost:4444/pokemon/insert', {
+            method: 'POST', 
+            headers: {
+                'Accept': 'application/json', 
+                'Content-Type':'application/json'
+            },
+            body: JSON.stringify(pokemon)
+        }
+    )
+    const pokedex = await response.json()
+    return pokedex
 }
