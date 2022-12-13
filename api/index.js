@@ -50,6 +50,17 @@ app.get("/Pokemon/list", function (req, res) {
         .updateOne({id:"004"},{$set:{name:"Mewtwo"}});
     
   });
+  app.post('/Pokemon/update',jsonParser, (req, res) => {
+    const body = req.body;
+    console.log('Got body:', body);
+    //on code ensuite l'insertion dans mongoDB, lisez la doc hehe !!
+    const dbConnect = dbo.getDb();
+    //premier test permettant de récupérer mes pokemons !
+    dbConnect
+        .collection("Pokemon")
+        .updateOne({id:body.id},{$set:{...body}});
+    
+  });
   app.delete('/Pokemon/insert',jsonParser,(req,res)=>{
     const body= req.body;
     const dbConnect = dbo.getDb();
