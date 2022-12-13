@@ -1,14 +1,17 @@
 import Menu from "../components/menu";
+import Modalupdate from "../components/modal";
 import React,{useEffect,useState} from "react";
-import { getAll,deletePokemon } from "../pokemon";
+import { getAll,deletePokemon,updatePokemon } from "../pokemon";
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+
 import '../App.css'
 function Panel(props){
     const [ pokemons, setPokemon ] = useState([]);
+    const [show, setShow] = useState(false);
 
     //va s'executer seulement au lancement du composant (dep: [])
     useEffect(() => {
@@ -24,14 +27,15 @@ function Panel(props){
         <Container>
       <Row>
       {
-        pokemons.map((pokemons,key) =>{
+        pokemons.map((pokemon,key) =>{
           return <Col md={4}>
             <div key={key}>
             <Card style={{ width: '18rem' }} className="text-center card">
-            <Card.Img className="pokSize" variant="top" src={pokemons.img} alt="test" />
+            <Card.Img className="pokSize" variant="top" src={pokemon.img} alt="test" />
             <Card.Body>
-              <Card.Title>{pokemons.name}</Card.Title>
-              <Button variant="danger" onClick={()=>deletePokemon(pokemons)}>Delete</Button>
+              <Card.Title>{pokemon.name}</Card.Title>
+              <Button variant="danger" onClick={()=>deletePokemon(pokemon)}>Delete</Button>
+              <Modalupdate pokemon={pokemon}/>
             </Card.Body>
           </Card></div>
         </Col>
