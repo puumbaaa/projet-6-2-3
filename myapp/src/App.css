@@ -36,6 +36,15 @@
     transform: rotate(360deg);
   }
 }
+@font-face{
+  font-family: pokemon-font;
+  src: url("../font/VT323-Regular.ttf");
+}
+
+.font{
+  font-family: pokemon-font;
+  font-size: 5rem;
+}
 .back{
   background-image: url("../img/background.jpg");
   background-repeat:no-repeat;
@@ -47,5 +56,24 @@
 }
 .logo-menu{
   width: 20%
+}
+
+.background-footer{
+  background-color: #e03444;
+  color: #efa4ab;
+}
+
+.card-space{
+  margin-top: 10%;
+  margin-bottom: 10%;
+  background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/0be1cc2e-1b6b-4398-a218-2f6870aec127/d4z5mal-920b8b0b-2aa8-4b72-9f32-f30516c998f4.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzBiZTFjYzJlLTFiNmItNDM5OC1hMjE4LTJmNjg3MGFlYzEyN1wvZDR6NW1hbC05MjBiOGIwYi0yYWE4LTRiNzItOWYzMi1mMzA1MTZjOTk4ZjQuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.V7wKCWvniL_Yr2mCe4JFt1XCUgVW_86akq_KY0YHFnE");
+  background-position: center;
+  background-size: cover;
+}
+
+.img-card{
+  padding-left: 20%;
+  padding-right: 20%;
+  width: 100%;
 }
 

@@ -1,4 +1,5 @@
 import Menu from "../components/menu";
+import Footer from "../components/footer";
 import React,{useEffect,useState} from "react";
 import { getAll,addToPokedex } from "../pokemon";
 import Button from 'react-bootstrap/Button';
@@ -22,15 +23,15 @@ function Pokemon(props){
     console.log(pokemons)
     return <div className="back">
     <Menu/>
-    <h1 className="text-center">Liste de Pokemons</h1>
+    <h1 className="text-center font">Pokemon's list</h1>
     <Container>
       <Row>
       {
         pokemons.map((pokemons,key) =>{
           return <Col md={4}>
             <div key={key}>
-            <Card style={{ width: '18rem' }} className="text-center card">
-            <Card.Img className="pokSize" variant="top" src={pokemons.img} alt="test" />
+            <Card style={{ width: '18rem' }} className="text-center card card-space">
+            <Card.Img className="pokSize img-card" variant="top" src={pokemons.img} alt="test" />
             <Card.Body>
               <Card.Title>{pokemons.name}</Card.Title>
               <Button variant="danger" onClick={()=>addToPokedex(pokemons)}>Catch !</Button>
@@ -42,6 +43,7 @@ function Pokemon(props){
       }
       </Row>
     </Container>
+    <Footer/>
     
 </div>;
 }

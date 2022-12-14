@@ -64,7 +64,7 @@ app.get("/Pokemon/list", function (req, res) {
     const dbConnect = dbo.getDb();
     dbConnect 
         .collection("Pokemon")
-        .deleteOne({...body})
+        .deleteOne({name:body.name})
     res.json(body);
 
   });
@@ -105,3 +105,11 @@ app.get("/Pokemon/list", function (req, res) {
     res.json(body);
 
   });
+  app.delete('/Pokedex/delete',jsonParser,(req,res)=>{
+    const body= req.body;
+    const dbConnect = dbo.getDb();
+    dbConnect 
+        .collection("Pokedex")
+        .deleteOne({name:body.name})
+    res.json(body);
+});
