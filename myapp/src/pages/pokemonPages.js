@@ -46,7 +46,7 @@ function Pokemon(props){
               <Card.Title>{pokemons.name}</Card.Title>
               {pokedexs.find (pokedexs => pokedexs.name===pokemons.name)? <Button variant="danger" > Already Catched !</Button>
               : 
-              <Button variant="danger" onClick={()=>addToPokedex(pokemons)}>Catch !</Button>
+              <Button variant="danger" onClick={()=>addToPokedex(pokemons) && refreshPage()}>Catch !</Button>
             }
             </Card.Body>
           </Card></div>

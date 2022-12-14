@@ -3,6 +3,7 @@ import {addPokemon } from "../pokemon";
 import Button from 'react-bootstrap/Button';
 import {useForm} from'react-hook-form';
 import Modal from 'react-bootstrap/Modal';
+
 function ModalAdd(){
     const { register, handleSubmit } = useForm();
     const [show, setShow] = useState(false);
@@ -19,7 +20,7 @@ function ModalAdd(){
 
     return<>
     
-        <Button variant="primary" onClick={handleShow}>
+        <Button variant="danger" onClick={handleShow}>
         Add Pokemon
         </Button>
         <Modal show={show} onHide={handleClose}>
@@ -30,7 +31,7 @@ function ModalAdd(){
         <input {...register("id")} placeholder="Pokemon's id (ex:001)"></input>
         <input {...register("name")} placeholder="Pokemon's name"  />
         <input {...register("img")} placeholder="link of the image"/>
-        <Button type="submit" onClick={refreshPage}>Submit</Button>
+        <Button variant="danger" type="submit"  onClick={refreshPage}>Submit</Button>
         </form>
         </Modal>
     

@@ -24,7 +24,7 @@ function Pokedex(props){
     console.log(pokedexs)
     return <div className="back">
     <Menu/>
-    <h1 className="text-center font">Pokedex</h1>
+    <h1 className="text-center fonts">Pokedex</h1>
     <Container>
       <Row>
       {

@@ -44,6 +44,9 @@
 .font{
   font-family: pokemon-font;
   font-size: 5rem;
+  color: #ffcc01;
+  -webkit-text-stroke: 1px #3362ae;
+  font-weight: bold;
 }
 .back{
   background-image: url("../img/background.jpg");
@@ -76,4 +79,3 @@
   padding-right: 20%;
   width: 100%;
 }
-

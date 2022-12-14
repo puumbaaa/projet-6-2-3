@@ -31,7 +31,7 @@ function Modalupdate(props){
         <input {...register("id")} defaultValue={props.pokemon.id}></input>
         <input {...register("name")} placeholder="Pokemon's name" defaultValue={props.pokemon.name} />
         <input {...register("img")} placeholder="link of the image" defaultValue={props.pokemon.img}/>
-        <Button type="submit" onClick={refreshPage}>Submit</Button>
+        <Button variant="danger" type="submit" onClick={refreshPage}>Submit</Button>
         </form>
         </Modal>
     
