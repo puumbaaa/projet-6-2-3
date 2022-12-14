@@ -1,7 +1,7 @@
 import Menu from "../components/menu";
 import Footer from "../components/footer";
 import React,{useEffect,useState} from "react";
-import { getAll,addToPokedex } from "../pokemon";
+import { getAll,getAllp,addToPokedex } from "../pokemon";
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
@@ -21,6 +21,16 @@ function Pokemon(props){
         .catch(error=>console.error("Erreur avec notre API :",error.message));
     },[]);
     console.log(pokemons)
+    const [ pokedexs, setPokedex ] = useState([]);
+    function refreshPage() {
+      window.location.reload(false);
+    }
+    useEffect(() => {
+    const pokedexsFetched = getAllp();
+    pokedexsFetched
+        .then(result => setPokedex(result))
+        .catch(error=>console.error("Erreur avec notre API :",error.message));
+    },[]);
     return <div className="back">
     <Menu/>
     <h1 className="text-center font">Pokemon's list</h1>
@@ -34,7 +44,10 @@ function Pokemon(props){
             <Card.Img className="pokSize img-card" variant="top" src={pokemons.img} alt="test" />
             <Card.Body>
               <Card.Title>{pokemons.name}</Card.Title>
+              {pokedexs.find (pokedexs => pokedexs.name===pokemons.name)? <Button variant="danger" > Already Catched !</Button>
+              : 
               <Button variant="danger" onClick={()=>addToPokedex(pokemons)}>Catch !</Button>
+            }
             </Card.Body>
           </Card></div>
         </Col>
